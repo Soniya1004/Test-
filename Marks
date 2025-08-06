@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int numSubjects, maxMark, i;
+    float totalMarks = 0.0, mark, average, percentage;
+
+    printf("Enter the number of subjects: ");
+    scanf("%d", &numSubjects);
+
+    printf("Enter the maximum mark for each subject: ");
+    scanf("%d", &maxMark);
+
+    printf("Enter the marks obtained in each subject:\n");
+    for (i = 0; i < numSubjects; i++) {
+        printf("Subject %d: ", i + 1);
+        scanf("%f", &mark);
+        totalMarks += mark;
+    }
+
+    average = totalMarks / numSubjects;
+    percentage = (totalMarks / (numSubjects * maxMark)) * 100;
+
+    printf("Average Marks: %.2f\n", average);
+    printf("Percentage: %.2f%%\n", percentage);
+
+    return 0;
+}
